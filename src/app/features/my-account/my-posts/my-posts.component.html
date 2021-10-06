@@ -1,0 +1,29 @@
+<div class="container">
+
+
+ <br>
+<div class="container">
+  <h2>Comercios destacados</h2>
+</div>
+
+<br>
+
+<div class="container">
+
+  <mat-grid-list cols="5" rowHeight="420px" gutterSize="10px" class="grid-layout">
+    <mat-grid-tile *ngFor="let product of products">
+      <mat-card class="example-card">
+        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <p class="prize">
+            $ 350.000
+          </p>
+          <p>2017 | 115000 km</p>
+          <p>Peugeot 208 titptronic 16 valvulas y no se que mas</p>
+          <p>Santiago del Estero</p>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+<br>

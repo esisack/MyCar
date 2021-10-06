@@ -1,0 +1,104 @@
+<div class="container">
+    <br>
+    <div fxLayout="column" fxLayoutAlign="space-between stetch">
+
+        <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between start" fxLayoutGap="10px">
+            <div #divImages class=".gallery-wrapper">
+                <ngx-gallery [options]="galleryOptions" [images]="galleryImages" class="ngx-gallery-layout">
+                </ngx-gallery>
+            </div>
+            <div fxLayout="column" fxLayoutAlign="space-between start">
+                <div fxLayout="column" fxLayoutAlign="space-between start" class="border-cards" style="height: 300px;">
+                    <p class="year"> {{ item.year }} | {{ item.km }} km</p>
+                    <p class="stitle">{{ item.itemName }}</p>
+                    <br>
+                    <p class="sprize">$ {{ item.price | number }} </p>
+                    <br>
+                    <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="15px">
+                        <button mat-flat-button color="primary" style="width: 150px;">Consultar</button>
+                        <button mat-flat-button color="primary" style="width: 150px;">Reservar</button>
+                    </div>
+
+                </div>
+                <br>
+                <div fxLayout="column" fxLayoutAlign="space-between start" class="border-cards"
+                    style="height: 300px; width: 100%;">
+                    <p class="year">Información del vendedor</p>
+                    <p class="title">DYCAR Automotores - Concesionario oficial Chevrolet</p>
+                    <p class="year">Av. Paraguay Nro 2271 - Salta</p>
+                    <p class="year">Vendedor: Juan Catalfamo</p>
+                    <p class="year">Cel. +54-387-683-4587</p>
+                    <br>
+
+                </div>
+            </div>
+        </div>
+        <br>
+        <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between start" fxLayoutGap="10px">
+            <div fxLayout="column" fxLayoutAlign="space-between start" class="border-cards" style="width: 100%;  height: 400px;">
+                <p class="year">Información de la unidad</p>
+                <table style="width:100%;">
+                    <tr>
+                        <th>Marca:</th>
+                        <td>{{ item.make.makeName }}</td>
+                    </tr>
+                    <tr>
+                        <th>Modelo:</th>
+                        <td>{{ item.model.modelName }}</td>
+                    </tr>
+                    <tr>
+                        <th>Version:</th>
+                        <td>{{ item.trim.trimName }}</td>
+                    </tr>
+                    <tr>
+                        <th>Año:</th>
+                        <td>{{ item.year }}</td>
+                    </tr>
+                    <tr>
+                        <th>Kilomentros:</th>
+                        <td>{{ item.km }}</td>
+                    </tr>
+                    <tr>
+                        <th>Color:</th>
+                        <td>{{ item.color }}</td>
+                    </tr>
+                    <tr>
+                        <th>Combustible:</th>
+                        <td>{{ item.fuel }}</td>
+                    </tr>
+                    <tr>
+                        <th>Transmisión:</th>
+                        <td>{{ item.transmition }}</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div fxLayout="column" fxLayoutAlign="start start" class="border-cards"
+                style="width: 100%; height: 400px;">
+                <p class="year">Información complementaria</p>
+                <p class="title">{{ item.description }}</p>
+
+
+            </div>
+        </div>
+        <br>
+        <div fxLayout="column" fxLayoutAlign="space-between start" class="border-cards"
+            style="height: 300px; width: 100%;">
+            <p class="year">Información de la unidad</p>
+
+            <div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="10px">
+                <p class="title" fxFlex="30"> Marca</p>
+                <p class="title" fxFlex="70"> {{ item.make.makeName }}</p>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="10px">
+                <p class="title" fxFlex="30"> Modelo</p>
+                <p class="title" fxFlex> {{ item.model.modelName }}</p>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="10px">
+                <p class="title" fxFlex="30"> Version</p>
+                <p class="title" fxFlex> {{ item.trim.trimName }}</p>
+            </div>
+        </div>
+    </div>
+
+</div>

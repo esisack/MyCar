@@ -1,0 +1,53 @@
+<div fxLayout="column" fxLayoutAlign="space-between strech" fxLayoutGap="20px">
+    <br>
+    <h2>Datos de cuenta</h2>
+    <mat-card fxFlex="60">
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+            <div fxFlex="5">
+                <div style="border-radius: 50%; width: 35px; height: 35px; border: 1px solid gainsboro; margin: auto; text-align: center;">
+                    <mat-icon>email</mat-icon>
+                </div>
+            </div>
+            <span fxFlex="20">Correo electrónico</span>
+            <span fxFlex="65">esisack@gmail.com</span>
+            <span fxFlex="10">
+                <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+                    <mat-icon>keyboard_arrow_right</mat-icon>
+                </button>
+            </span>
+        </div>
+        <br>
+        <mat-divider></mat-divider>
+        <br>
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+            <div fxFlex="5">
+                <div style="border-radius: 50%; width: 35px; height: 35px; border: 1px solid gainsboro; margin: auto; text-align: center;">
+                    <mat-icon>vpn_key</mat-icon>
+                </div>
+            </div>
+            <span fxFlex="20">Contraseña</span>
+            <span fxFlex="65"> ******** </span>
+            <span fxFlex="10">
+                <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+                    <mat-icon>keyboard_arrow_right</mat-icon>
+                </button>
+            </span>
+        </div>
+    </mat-card>
+    <mat-card fxFlex="60">
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+            <div fxFlex="5">
+                <div style="border-radius: 50%; width: 35px; height: 35px; border: 1px solid gainsboro; margin: auto; text-align: center;">
+                    <mat-icon>lock</mat-icon>
+                </div>
+            </div>
+            <span fxFlex="20">{{ action }}</span>
+            <span fxFlex="65">{{ label }}</span>
+            <span fxFlex="10">
+                <mat-slide-toggle class="red-slide" [checked]="freeze" [(ngModel)]="freeze" (change)="change($event)">
+                </mat-slide-toggle>
+            </span>
+        </div>
+        <br>
+    </mat-card>
+</div>

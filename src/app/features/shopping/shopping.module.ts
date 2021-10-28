@@ -7,12 +7,14 @@ import { RouterModule } from '@angular/router';
 import { MaterialModule } from 'src/app/core/services/material/material.module';
 import { PostComponent } from './posts/post/post.component';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
+import { SidebarComponent } from './posts/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     PostsComponent,
-    PostComponent
+    PostComponent,
+    SidebarComponent
   ],
   imports: [
     CommonModule,

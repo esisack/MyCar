@@ -1,0 +1,89 @@
+<div fxLayout="column" fxLayoutAlign="space-between strech" fxLayoutGap="20px">
+    <br>
+    <h2>Datos personales</h2>
+    <mat-card fxFlex="60">
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+            <span fxFlex="25">Nombre y apellido</span>
+            <span fxFlex="65">ENRIQUE SISACK</span>
+            <span fxFlex="10">
+                <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+                    <mat-icon>keyboard_arrow_right</mat-icon>
+                </button>
+            </span>
+        </div>
+        <mat-divider></mat-divider>
+        <br>
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+            <span fxFlex="25">Documento</span>
+            <span fxFlex="65">DNI 17 236 796</span>
+            <span fxFlex="10">
+                <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+                    <mat-icon>keyboard_arrow_right</mat-icon>
+                </button>
+            </span>
+        </div>
+
+        <mat-divider></mat-divider>
+        <br>
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+            <span fxFlex="25">Teléfono</span>
+            <span fxFlex="65" class="dato">(387) 683-4000</span>
+            <span fxFlex="10">
+                <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+                    <mat-icon>keyboard_arrow_right</mat-icon>
+                </button>
+            </span>
+        </div>
+
+        <mat-divider></mat-divider>
+        <br>
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+            <span fxFlex="25">Teléfono alternativo</span>
+            <span fxFlex="65">{{ phone }}</span>
+            <span fxFlex="10">
+                <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+                    <mat-icon>keyboard_arrow_right</mat-icon>
+                </button>
+            </span>
+        </div>
+        <mat-divider></mat-divider>
+        <br>
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+            <span fxFlex="25">Correo electrónico</span>
+            <span fxFlex="65">{{ mail }}</span>
+            <span fxFlex="10">
+                <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+                    <mat-icon>keyboard_arrow_right</mat-icon>
+                </button>
+            </span>
+        </div>
+    </mat-card>
+    <h2>Domicilios</h2>
+    <!-- <mat-card fxFlex="60">
+        <div *ngFor='let dom of domicilios'>
+            <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+                <span fxFlex="90">
+                    <p style="font-weight: 500;">{{ dom.calle }} N° {{ dom.altura }}</p>
+                    <p>{{ dom.codigoPostal.localidad }} ({{ dom.codigoPostal.codpos }}), {{
+                        dom.codigoPostal.provincia
+                        }}</p> 
+                </span>
+                <span fxFlex="10">
+                    <button mat-icon-button (click)="changeOption(dom)">
+                        <mat-icon>keyboard_arrow_right</mat-icon>
+                    </button>
+                </span>
+            </div>
+            <mat-divider></mat-divider>
+            <br>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+            <span fxFlex="80"><a>Agregar domicilio</a></span>
+            <span fxFlex="10">
+                <button mat-icon-button (click)="changeOption(null)">
+                    <mat-icon>keyboard_arrow_right</mat-icon>
+                </button>
+            </span>
+        </div>
+    </mat-card> -->
+</div>

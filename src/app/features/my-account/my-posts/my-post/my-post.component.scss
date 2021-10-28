@@ -1,0 +1,46 @@
+form {
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    margin: 35px;
+}
+
+.big-letter {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.mat-hint {
+    display: none;
+}
+
+.mat-form-field.mat-focused {
+    .mat-hint {
+        display: block;
+    }
+}
+
+.gallery-wrapper {
+    text-align: center;
+    margin-top: 0px;
+    .ngx-gallery {
+ //       display: inline-block;
+        margin-bottom: 0px;
+          width: 100%;
+           height: 800px;
+           border-color: #4a89ff;
+     }
+}
+
+.ngx-gallery { 
+  display: inline-block; 
+  margin-bottom: 0px; 
+}
+
+td, th {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}

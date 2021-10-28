@@ -6,5 +6,8 @@ export class Customer {
     document!: number
     name!: string
     lastName!: string
+    logo!: string
+    banner!: string
+    freeze!: number
     
 }

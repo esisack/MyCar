@@ -1,0 +1,29 @@
+<br>
+<mat-tab-group>
+    <mat-tab label="Datos personales">
+        <div fxLayout="column" fxLayoutAlign="space-between strech" fxLayoutGap="20px">
+            <br>
+            <div [ngSwitch]="option">
+                <!-- <ng-template [ngSwitchCase]="'address'">
+                    <app-address [option]="option" [address]="address" (valueResponse)=" option = $event">
+                    </app-address>
+                </ng-template> -->
+                <ng-template ngSwitchDefault>
+                    <app-personal-profile [option]="option"  >
+
+                    </app-personal-profile>
+                </ng-template>
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab label="Seguridad">
+        <ng-template matTabContent>
+            <app-security-profile></app-security-profile>
+        </ng-template>
+    </mat-tab>
+    <mat-tab label="Preferencias">
+        <ng-template matTabContent>
+            <app-preference-profile></app-preference-profile>
+        </ng-template>
+    </mat-tab>
+</mat-tab-group>

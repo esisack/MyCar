@@ -1,0 +1,72 @@
+<div fxLayout="column" fxLayoutAlign="space-between strech" fxLayoutGap="20px">
+    <br>
+    <h2>Preferencias</h2>
+    <p>Elegí que tipo de información querés recibir</p>
+    <br>
+    <h3>SMS</h3>
+    <mat-card fxFlex="60">
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+            <span fxFlex="90">Notificaciones sobre tus cobros, pagos y otros movimientos</span>
+            <span fxFlex="10">
+                <mat-slide-toggle color="warm" [checked]="prefer1" [(ngModel)]="prefer1" (change)="onChange($event)">
+                </mat-slide-toggle>
+            </span>
+        </div>
+        <br>
+        <mat-divider></mat-divider>
+        <br>
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+            <span fxFlex="90">Ofertas y promociones personalizadas</span>
+            <span fxFlex="10">
+                <mat-slide-toggle color="warm" [checked]="prefer2" [(ngModel)]="prefer2" (change)="onChange($event)">
+                </mat-slide-toggle>
+            </span>
+        </div>
+        <br>
+        <mat-divider></mat-divider>
+        <br>
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+            <span fxFlex="90">Recordatorio de tus vencimientos</span>
+            <span fxFlex="10">
+                <mat-slide-toggle color="warm" [checked]="prefer3" [(ngModel)]="prefer3" (change)="onChange($event)">
+                </mat-slide-toggle>
+            </span>
+        </div>
+    </mat-card>
+    <br>
+    <h3>E-mails</h3>
+    <mat-card fxFlex="60">
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+            <span fxFlex="90">Promociones y descuentos en tús pagos</span>
+            <span fxFlex="10">
+                <mat-slide-toggle color="warm" [checked]="prefer4" [(ngModel)]="prefer4" (change)="onChange($event)">
+                </mat-slide-toggle>
+            </span>
+        </div>
+        <br>
+        <mat-divider></mat-divider>
+        <br>
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+            <span fxFlex="90">Promociones y sugerencias para vender</span>
+            <span fxFlex="10">
+                <mat-slide-toggle color="warm" [checked]="prefer5" [(ngModel)]="prefer5" (change)="onChange($event)">
+                </mat-slide-toggle>
+            </span>
+        </div>
+        <br>
+        <mat-divider></mat-divider>
+        <br>
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+            <span fxFlex="90">Notificaciones sobre tús cobros</span>
+            <span fxFlex="10">
+                <mat-slide-toggle color="warm" [checked]="prefer6" [(ngModel)]="prefer6" (change)="onChange($event)">
+                </mat-slide-toggle>
+            </span>
+        </div>
+    </mat-card>
+    <p>Seguirás recibiendo comunicaciones con información importante sobre tú cuenta </p>
+    <br>
+</div>
+<button mat-flat-button type="submit" color="primary" (click)="onSubmit()" [disabled]="!change">Guardar</button>
+&nbsp;
+<button mat-flat-button type="submit" color="warn" (click)="onCancel()">Cancelar</button>

@@ -1,0 +1,28 @@
+.sidenav {
+    width: 270px;
+    background-color: white;
+  }
+  
+  .sidenav .mat-toolbar {
+    background: inherit;
+  }
+  
+  .mat-toolbar.mat-primary {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  
+  svg path {
+    fill: #333333;
+    
+  }
+  
+  svg hover {
+    fill: #EF0000;
+  }
+  
+  .mat-drawer-container {
+    background-color: whitesmoke;
+  }
+  

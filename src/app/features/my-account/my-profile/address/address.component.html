@@ -1,0 +1,74 @@
+<div fxLayout="column" fxLayoutAlign="space-between strech" fxLayoutGap="20px">
+    <h2>Actualizar domicilio</h2>
+    <mat-card fxFlex="60">
+        <form [formGroup]="addressForm" (submit)="onSubmit()">
+            <div fxLayout="column" fxLayoutAlign="space-around strech" style="width: 90%; margin: auto;">
+                <div fxLayout="row" fxLayoutAlign="space-between center">
+                    <mat-form-field style="width: 48%;">
+                        <mat-label>Código postal</mat-label>
+                        <input matInput formControlName="codpos" mask="0000" (change)="onSelectCP($event)">
+                        <a mat-button matSuffix style="color: #FE0000;">No sé mi código</a>
+                    </mat-form-field>               
+                </div>
+                <br>
+                <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+                    <mat-form-field class="full-width">
+                        <mat-label>Localidad</mat-label>
+                        <input matInput formControlName="localidad" readonly>
+                    </mat-form-field>
+                    <mat-form-field class="full-width">
+                        <mat-label>Provincia</mat-label>
+                        <input matInput formControlName="provincia" readonly>
+                    </mat-form-field>
+                </div>
+                <br>
+                <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+                    <mat-form-field class="full-width">
+                        <mat-label>Calle</mat-label>
+                        <input matInput formControlName="calle" oninput="this.value = this.value.toUpperCase()">
+                    </mat-form-field>
+                    <mat-form-field class="full-width">
+                        <mat-label>Altura</mat-label>
+                        <input matInput formControlName="altura">
+                        <mat-checkbox matSuffix style="color: #FE0000;">Sin número</mat-checkbox>
+                    </mat-form-field>
+                </div>
+                <br>
+                <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+                    <mat-form-field class="full-width">
+                        <mat-label>Piso / Departamento</mat-label>
+                        <input matInput formControlName="piso" oninput="this.value = this.value.toUpperCase()">
+                    </mat-form-field>
+                    <mat-form-field class="full-width">
+                        <mat-label>Barrio</mat-label>
+                        <input matInput formControlName="barrio" oninput="this.value = this.value.toUpperCase()">
+                    </mat-form-field>
+                </div>
+                <br>
+                <div fxLayout="row" fxLayoutAlign="space-between center">
+                    <mat-form-field class="full-width">
+                        <mat-label>Indicaciones adicionales para entregar tus compras a esta dirección</mat-label>
+                        <textarea matInput formControlName="referencia"></textarea>
+                    </mat-form-field>
+                </div>
+                <br>
+                <div fxLayout="row" fxLayoutAlign="space-between center">
+                    <mat-form-field style="width: 48%;">
+                        <mat-label>Teláfono alternativo</mat-label>
+                        <input matInput formControlName="telefono" mask="(00) 0000-0000">
+                    </mat-form-field>
+                </div>
+                <br>
+            </div>
+            <br>
+            <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="20px" style="width: 90%; margin: auto;">
+                <button mat-flat-button fxFlex="30" class="white-button" (click)="changeOption('profile')">
+                    Cancelar
+                </button>
+                <button [disabled]="!addressForm.valid" mat-flat-button fxFlex="30" type="submit" class="red-button">
+                    Guardar
+                </button>
+            </div>
+        </form>
+    </mat-card>
+</div>

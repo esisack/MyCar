@@ -1,0 +1,24 @@
+<div class="container">
+    <h2>Mis consultas</h2>
+</div>
+<div class="container">
+    <mat-grid-list cols="3" rowHeight="420px" gutterSize="10px" class="grid-layout">
+        <mat-grid-tile *ngFor="let item of items | slice:0:2">
+            <mat-card>
+                <img mat-card-image
+                    src='{{ "https://boodle-bucket.s3.sa-east-1.amazonaws.com/vehicules/" + item.documents[0].documentName }}'
+                    alt="ABCDEF565943_637666134537352609.jpg">
+                <mat-card-content>
+                    <a mat-button (click)="goItem(item.itemId)">
+                        <p class="prize">
+                            $ {{ item.price | number}}
+                        </p>
+                    </a>
+                    <p>{{ item.year }} | {{ item.km }} km</p>
+                    <p>{{ item.itemName }}</p>
+                    <p>Santiago del Estero</p>
+                </mat-card-content>
+            </mat-card>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>

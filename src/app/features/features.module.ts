@@ -9,7 +9,8 @@ import { ShoppingModule } from './shopping/shopping.module';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+  ],
   imports: [
     CommonModule,
     HttpClientModule,

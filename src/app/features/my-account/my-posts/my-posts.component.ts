@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
+import { Router } from '@angular/router';
+import { Item } from 'src/app/data/model/item';
+import { ItemService } from 'src/app/data/services/item.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-my-posts',
@@ -7,11 +11,9 @@ import { PageEvent } from '@angular/material/paginator';
   styleUrls: ['./my-posts.component.scss']
 })
 export class MyPostsComponent implements OnInit {
-  name!: string;
-  username!: string;
-
+  imageUrl = environment.imgUrl;
+  
   cols = 4;
-
   length = 0;
   pageIndex = 0;
   pageSize = 20;
@@ -19,14 +21,24 @@ export class MyPostsComponent implements OnInit {
 
   pageEvent!: PageEvent | void;
 
-  products: number[] = []
-  constructor() { }
+  items: Item[] = []
+
+  constructor(
+    private itemService: ItemService,
+    private router: Router) { 
+
+  }
 
   ngOnInit(): void {
-    this.products.push(1)
-    this.products.push(2)
-    this.products.push(3)
-    this.products.push(4)
+
+    this.itemService.getData().subscribe(data => {
+      this.items = data
+    }) 
+  }
+
+  goItem(id: number) {
+    this.router.navigate(['/publicacion', id])
+
   }
 
   getNextPage(event: PageEvent) {

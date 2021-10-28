@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
+import { Router } from '@angular/router';
+import { Customer } from 'src/app/data/model/customer';
+import { Item } from 'src/app/data/model/item';
+import { CustomerService } from 'src/app/data/services/customer.service';
+import { ItemService } from 'src/app/data/services/item.service';
 
 @Component({
   selector: 'app-home',
@@ -19,15 +24,33 @@ export class HomeComponent implements OnInit {
 
   pageEvent!: PageEvent | void;
 
-  products: number[] = []
-  constructor() { }
+  items: Item[] = []
+
+  customers: Customer[] = []
+
+  constructor(
+    private itemService: ItemService,
+    private customerService: CustomerService,
+    private router: Router) { 
+
+  }
 
   ngOnInit(): void {
-    this.products.push(1)
-    this.products.push(2)
-    this.products.push(3)
-    this.products.push(4)
+    this.itemService.getData().subscribe(data => {
+      this.items = data
+    }) 
+
+    this.customerService.getData().subscribe(data => {
+      this.customers = data
+      console.log(data)
+    })
   }
+
+  goItem(id: number) {
+    this.router.navigate(['/item', id])
+
+  }
+
 
   getNextPage(event: PageEvent) {
     //  this.getProducts(event.pageIndex + 1, event.pageSize);

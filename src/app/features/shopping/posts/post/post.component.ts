@@ -65,26 +65,6 @@ export class PostComponent implements OnInit {
       this.addImage(data.documentName)
     })
 
-
-    //     this.galleryImages = [
-    //       {
-    //         small: this.imageUrl + item.documents[0].documentName,
-    //         medium: this.imageUrl + item.documents[0].documentName,
-    //         big: this.imageUrl + item.documents[0].documentName,
-    //       },{
-    //         small: this.imageUrl + item.documents[1].documentName,
-    //         medium: this.imageUrl + item.documents[1].documentName,
-    //         big: this.imageUrl + item.documents[1].documentName,
-    //       },{
-    //         small: this.imageUrl + item.documents[2].documentName,
-    //         medium: this.imageUrl + item.documents[2].documentName,
-    //         big: this.imageUrl + item.documents[2].documentName,
-    //       },{
-    //         small: this.imageUrl + item.documents[3].documentName,
-    //         medium: this.imageUrl + item.documents[3].documentName,
-    //         big: this.imageUrl + item.documents[3].documentName,
-    //       }
-    // ]
   }
 
   addImage(imageName: string): void {

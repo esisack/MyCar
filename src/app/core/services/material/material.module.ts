@@ -24,6 +24,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatSnackBarModule} from '@angular/material/snack-bar'; 
 
 import { MatTooltipModule } from '@angular/material/tooltip';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 const MaterialComponents = [
   FlexLayoutModule,
@@ -45,6 +46,7 @@ const MaterialComponents = [
   MatTabsModule,
   MatInputModule,
   MatSelectModule,
+  MatSlideToggleModule,
   MatExpansionModule,
   MatSnackBarModule,
   MatTooltipModule,

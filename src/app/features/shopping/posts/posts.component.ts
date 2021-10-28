@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
+import { Router } from '@angular/router';
 import { Item } from 'src/app/data/model/item';
 import { ItemService } from 'src/app/data/services/item.service';
 import { environment } from 'src/environments/environment';
@@ -25,16 +26,22 @@ export class PostsComponent implements OnInit {
 
   items: Item[] = []
 
-  constructor(private itemService: ItemService) { }
+  constructor(
+    private itemService: ItemService,
+    private router: Router) { 
 
-  ngOnInit(): void {
-
-    this.itemService.getData().subscribe(data => {
-      this.items = data
-    })
-    
   }
 
+  ngOnInit(): void {
+    this.itemService.getData().subscribe(data => {
+      this.items = data
+    }) 
+  }
+
+  goItem(id: number) {
+    this.router.navigate(['/item', id])
+
+  }
 
   getNextPage(event: PageEvent) {
     //  this.getProducts(event.pageIndex + 1, event.pageSize);

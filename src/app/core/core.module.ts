@@ -4,10 +4,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from './services/material/material.module';
 import { HeaderComponent } from './components/header/header.component';
+import { HelpComponent } from './components/help/help.component';
+
 
 @NgModule({
   declarations: [
-    HeaderComponent
+    HeaderComponent,
+    HelpComponent
   ],
   imports: [
     CommonModule,

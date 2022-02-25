@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './auth/login/login.component';
+import { RecoveryComponent } from './auth/recovery/recovery.component';
+import { RegisterComponent } from './auth/register/register.component';
 import { HelpComponent } from './core/components/help/help.component';
 import { DefaultComponent } from './default/default.component';
 import { MyFavoritesComponent } from './features/my-account/my-favorites/my-favorites.component';
@@ -57,6 +60,12 @@ const routes: Routes = [
       }
     ]
 
+  },{
+    path: 'login', component: LoginComponent
+  },{
+    path: 'registrarse', component: RegisterComponent
+  },{
+    path: 'recuperar', component: RecoveryComponent
   },
 
 ];

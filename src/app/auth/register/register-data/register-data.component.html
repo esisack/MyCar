@@ -1,0 +1,59 @@
+<form [formGroup]="registerForm" (submit)="onSubmit()">
+    <mat-form-field class="full-width">
+        <mat-label>{{ lastNameLabel }}</mat-label>
+        <input matInput formControlName="apellido" oninput="this.value = this.value.toUpperCase()">
+        <mat-hint>{{ lastNameHint }} </mat-hint>
+        <mat-error *ngIf="registerForm.get('apellido')?.hasError('required')">
+            {{ lastNameError }} <strong>obligatorio</strong>
+        </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="full-width">
+        <mat-label>{{ firstNameLabel }}</mat-label>
+        <input matInput formControlName="nombre" oninput="this.value = this.value.toUpperCase()">
+        <mat-hint>{{ firstNameHint }} </mat-hint>
+        <mat-error *ngIf="registerForm.get('nombre')?.hasError('required')">
+            {{ firstNameError }} <strong>obligatorio</strong>
+        </mat-error>
+        <mat-error *ngIf="registerForm.get('nombre')?.hasError('required')">
+            {{ firstNameError }} <strong>solo puede incluir letras</strong>
+        </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="full-width">
+        <mat-label>{{ docNameLabel }}</mat-label>
+        <input matInput formControlName="documento" type="text" mask="00000000">
+        <mat-error *ngIf="registerForm.get('documento')?.hasError('required')">
+            El documento es <strong>obligatorio</strong>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field class="full-width">
+        <mat-label>Correo electrónico</mat-label>
+        <input type="email" matInput formControlName="mail" [errorStateMatcher]="matcher"
+            placeholder="Ej. mail@gmail.com" oninput="this.value = this.value.toLowerCase()">
+        <mat-error *ngIf="registerForm.hasError('mail')">
+            Introduzca un correo <strong>valido</strong>
+        </mat-error>
+        <mat-error *ngIf="!registerForm.hasError('required')">
+            El campo correo es <strong>obligatorio</strong>
+        </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="full-width">
+        <mat-label>Contraseña</mat-label>
+        <input type="password" matInput formControlName="clave" />
+        <mat-hint>Tu contraseña debe contener entre 8 y 15 caracteres.
+        </mat-hint>
+        <mat-error *ngIf="registerForm.get('clave')?.hasError('required')">
+            Introduzca una contraseña <strong>valida</strong>
+        </mat-error>
+    </mat-form-field>
+    <br>
+    <br>
+    <br>
+    <button [disabled]="!registerForm.valid" mat-flat-button type="submit" class="full-width red-button">
+        Registrarse
+    </button>
+    <br>
+
+</form>

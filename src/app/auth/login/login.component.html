@@ -1,0 +1,48 @@
+<div class="login-container">
+    <div class="container">
+  
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-card>
+          <mat-toolbar class="dinamica-toolbar">
+            <img src="assets/images/logo-blanco-01.png" style="width: 200px; height: auto; margin: auto;">
+          </mat-toolbar>
+          <mat-card-content style="padding: 25px;">
+            <br>
+            <p>Introduce el correo registrado para iniciar sesión</p>
+            <br>
+            <mat-error *ngIf="isLoginFailed">
+              Usuario o contrasena incorrecto
+            </mat-error>
+            <mat-form-field class="full-width" hideRequiredMarker>
+              <mat-label>Correo electrónico</mat-label>
+              <input matInput formControlName="username" required>
+              <mat-error>
+                Ingrese un correo válido
+              </mat-error>
+            </mat-form-field>
+            <br>
+            <mat-form-field class="full-width" hideRequiredMarker>
+              <mat-label>Contraseña</mat-label>
+              <input matInput type="password" formControlName="password" required>
+              <mat-error>
+                Ingrese una contraseña válida
+              </mat-error>
+            </mat-form-field>
+            <div style="padding: 25px;">
+              <br>
+              <br>
+              <button mat-flat-button type="submit" class="full-width red-button"
+                [disabled]="!loginForm.valid">Ingresar</button>
+              <br>
+              <br>
+              <a mat-button routerLink="/register" class="full-width white-button">Registrarse</a>
+              <br>
+              <br>
+              <a mat-button routerLink="/recovery" class="full-width other-button"
+                style="font-size:14px; color: gray;">Olvidé mi contraseña</a>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </form>
+    </div>
+  </div>

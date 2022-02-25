@@ -1,0 +1,11 @@
+<button mat-raised-button class="full-width red-button" [disabled]="dueTime">
+    <span>Reenviar código en </span>
+    <ng-container *ngIf="dueTime">
+        <span id="minutes"> {{minutesToDday}} </span>
+        <span id="seconds"> : {{secondsToDday}} </span>
+    </ng-container>
+    <div class="timer">
+        <!-- <span id="days"> {{daysToDday}} </span>Day(s)
+        <span id="hours"> {{hoursToDday}} </span>Hrs -->
+    </div>
+</button>

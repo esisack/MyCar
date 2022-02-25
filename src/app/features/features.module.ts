@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { MaterialModule } from '../core/services/material/material.module';
 import { MyAccountModule } from './my-account/my-account.module';
 import { ShoppingModule } from './shopping/shopping.module';
+import { CoreModule } from '../core/core.module';
 
 
 
@@ -17,7 +18,8 @@ import { ShoppingModule } from './shopping/shopping.module';
     RouterModule,
     MaterialModule,
     MyAccountModule,
-    ShoppingModule
+    ShoppingModule,
+    CoreModule
 
   ]
 })

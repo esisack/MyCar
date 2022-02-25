@@ -10,6 +10,7 @@ export class Item {
     entityId!: number
     itemId!: number
     itemCode!: string
+    used!: string
     itemName!: string
     description!: string
     itemType!: ItemType

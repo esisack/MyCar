@@ -1,0 +1,38 @@
+<form [formGroup]="confirmForm" (submit)="onSubmit()">
+    <mat-card>
+        <mat-toolbar class="dinamica-toolbar">
+            <img src="assets/images/logo-blanco-01.png" style="width: 200px; height: auto; margin: auto;">
+        </mat-toolbar>
+        <br>
+        <mat-card-content style="padding: 25px;">
+            <h3 style="font-weight: 600;">Ingresá el código de verificación</h3>
+            <ng-container *ngIf="!isMail">
+                <p>Recibiste un código de 6 dígitos por SMS</p>
+            </ng-container>
+            <ng-container *ngIf="isMail">
+                <p p style="font-variant: small-caps;">Recibiste un código de 6 dígitos por correo</p>
+            </ng-container>
+            <br>
+            <br>
+            <mat-form-field appearance="fill" class="full-width" style="text-align: center; font-size: 24px;">
+                <mat-label>Código</mat-label>
+                <input matInput formControlName="enterCode" type="text" mask="000000" />
+                <mat-error *ngIf="confirmForm.get('enterCode')?.hasError('enterCode')">
+                    El código es <strong>obligatorio</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-error *ngIf="isCheckFailed">
+                El código ingresado es incorrecto
+            </mat-error>
+
+            <br>
+            <button [disabled]="!confirmForm.valid" mat-flat-button type="submit" class="full-width red-button">
+                Confirmar
+            </button>
+            <br>
+            <br>
+            <count-down></count-down>
+            <br>
+        </mat-card-content>
+    </mat-card>
+</form>

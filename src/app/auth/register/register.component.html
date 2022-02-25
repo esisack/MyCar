@@ -1,0 +1,48 @@
+<div class="recovery-container">
+    <div class="container">
+        <button mat-mini-fab (click)="goBack()" style="float: right;" class="classic-button">
+            <mat-icon>help</mat-icon>
+        </button>
+        <div [ngSwitch]="option" class="container">
+            <ng-template [ngSwitchCase]="'success'">
+                <register-success [option]="option" [mail]='mail'>
+                </register-success>
+            </ng-template>
+            <ng-template ngSwitchDefault>
+                <mat-tab-group mat-align-tabs="center" class="mat-elevation-z8">
+                    <mat-tab label="Soy un cliente">
+                        <ng-template mat-tab-label>
+                            <mat-icon class="tab-icon">person</mat-icon>
+                            Soy un cliente
+                        </ng-template>
+                        <ng-template matTabContent>
+                            <register-data [signupType]='0' [phone]='phone' (mailResponse)=" mail = $event"
+                                (valueResponse)="option = $event" (codeResponse)="code = $event">
+                            </register-data>
+                        </ng-template>
+                    </mat-tab>
+                    <mat-tab label="Soy un comercio">
+                        <ng-template mat-tab-label>
+                            <mat-icon class="tab-icon">store</mat-icon>
+                            Soy un comercio
+                        </ng-template>
+                        <ng-template matTabContent>
+                            <register-data [signupType]='1' [phone]="phone" (mailResponse)="mail = $event"
+                                (valueResponse)="option = $event" (codeResponse)="code = $event">
+                            </register-data>
+                        </ng-template>
+                    </mat-tab>
+                </mat-tab-group>
+            </ng-template>
+            <ng-template [ngSwitchCase]="'confirm'">
+                <register-confirm [option]="option" [code]="code" [phone]="phone" [mail]="mail"
+                    (valueResponse)="option = $event">
+                </register-confirm>
+            </ng-template>
+            <!-- <ng-template ngSwitchDefault>
+                <register-phone [option]="option" [code]="code" [phone]="phone" 
+                    (codeResponse)="code = $event" (valueResponse)="option = $event" (phoneResponse)=" phone = $event"></register-phone>
+            </ng-template> -->
+        </div>
+    </div>
+</div>

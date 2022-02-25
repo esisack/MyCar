@@ -11,6 +11,7 @@ import { CoreModule } from './core/core.module';
 import { DefaultModule } from './default/default.module';
 import { NgxMaskModule, IConfig } from 'ngx-mask'
 import { registerLocaleData } from '@angular/common';
+import { AuthModule } from './auth/auth.module';
 
 const maskConfig: Partial<IConfig> = {
   validation: false,
@@ -29,7 +30,8 @@ const maskConfig: Partial<IConfig> = {
     NgxMaskModule.forRoot(maskConfig),
     DefaultModule,
     CoreModule,
-    FeaturesModule
+    FeaturesModule,
+    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

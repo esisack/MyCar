@@ -5,12 +5,14 @@ import { RouterModule } from '@angular/router';
 import { MaterialModule } from './services/material/material.module';
 import { HeaderComponent } from './components/header/header.component';
 import { HelpComponent } from './components/help/help.component';
+import { CountDownComponent } from './components/count-down/count-down.component';
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    HelpComponent
+    HelpComponent,
+    CountDownComponent
   ],
   imports: [
     CommonModule,
@@ -19,7 +21,8 @@ import { HelpComponent } from './components/help/help.component';
     MaterialModule
   ],
   exports: [
-    HeaderComponent
+    HeaderComponent,
+    CountDownComponent
   ]
 })
 export class CoreModule { }

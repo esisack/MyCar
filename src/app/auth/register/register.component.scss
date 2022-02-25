@@ -1,0 +1,39 @@
+.container {
+    margin: auto;
+    padding: 10px;
+  
+  }
+  mat-toolbar {
+      background-color: #FE0000;
+      text-align: center;
+    }
+  
+    .register {
+      max-width: 520px;
+      width: 100%;
+      margin: auto;
+      background-color: white;
+    }
+    
+    mat-tab-group {
+      max-width: 520px;
+      width: 90%;
+      height: 650px;
+      padding: 25px;
+      margin: auto;
+      background-color: white;
+    }
+    
+    .tab-icon {
+      margin-right: 8px;
+    }
+    
+    .big-letter {
+      font-size: 24px;
+      font-weight: 500;
+    }
+  
+    ::ng-deep .mat-tab-group.mat-primary .mat-ink-bar {
+      background-color: #FE0000 !important;
+      color: #FE0000;
+  }

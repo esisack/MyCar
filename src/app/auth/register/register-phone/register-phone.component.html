@@ -1,0 +1,42 @@
+<mat-card class="register">
+    <mat-card-content>
+        <mat-toolbar class="dinamica-toolbar">
+            <img src="assets/images/logo-blanco-01.png" style="width: 200px; height: auto; margin: auto;">
+        </mat-toolbar>    
+        <br>
+        <br>
+        <form [formGroup]="phoneForm" (submit)="onSubmit()" style="padding: 0px 20px;">
+
+            <br>
+            <p class="big-letter">Registración</p>
+            <p>Ingrese su número de teléfono móvil para registrarse</p>
+            <br>
+            <br>
+
+            <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="10px">
+                <mat-form-field fxFlex="25" appearance="fill" style="font-size: 18px;">
+                    <mat-label>Pais</mat-label>
+                    <mat-select [(value)]="selected">
+                        <mat-option value="54">+54</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <br>
+                <mat-form-field fxFlex appearance="fill" style="font-size: 18px;">
+                    <mat-label>Celular</mat-label>
+                    <input matInput formControlName="phone" type="text" mask="(00) 0000-0000" />
+                    <mat-error *ngIf="phoneForm.get('phone')?.hasError('required')">
+                        El campo celular es <strong>obligatorio</strong>
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div style="padding: 25px;"> 
+                <br>
+                <button [disabled]="!phoneForm.valid" mat-flat-button type="submit" class="full-width red-button">
+                    Registrarse
+                </button>
+                <br>
+            </div>
+   
+        </form>
+    </mat-card-content>
+</mat-card>

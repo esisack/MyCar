@@ -13,10 +13,13 @@ export class UserService {
   public phone!: number
 
   constructor(private http: HttpClient) { }
-
-
+  
   
    getDataById(id: number): Observable<User> {
      return this.http.get<User>(`${this.baseUrl}/users/${id}`);
    }
+
+   getDataByMail(mail: string): Observable<User> {
+    return this.http.get<User>(`${this.baseUrl}/users/${mail}`);
+  }
 }
